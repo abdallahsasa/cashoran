@@ -15,7 +15,7 @@ class ChunkInitiateRequest extends FormRequest
 
         $fileMaxSizes = [
             'video' => 1048576, // 1GB
-            'document' => 20480,    // 20MB
+            'document' => 60480,    // 20MB
             'image' => 2048,        // 2MB
             'zip' => 262144, // 256GB
         ];
@@ -26,7 +26,7 @@ class ChunkInitiateRequest extends FormRequest
             'zip' => ['application/zip', 'application/x-zip-compressed', 'application/x-rar-compressed'],
         ];
 
-        $this->maxSize = $fileMaxSizes[request('filetype')] ?? 2048;
+        $this->maxSize = $fileMaxSizes[request('filetype')] ?? 6048;
         $this->mimeTypes = $fileMimeTypes[request('filetype')] ?? [];
     }
 
