@@ -27,22 +27,10 @@ export function NavFooter({ className, ...props }: ComponentPropsWithoutRef<type
                                 asChild
                                 className="text-neutral-600 hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-neutral-100"
                             >
-                                <a
-                                    href={item.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    onClick={(e) => {
-                                        // If anyone called preventDefault upstream, just open it manually.
-                                        if (e.isDefaultPrevented && e.isDefaultPrevented()) {
-                                            window.open(item.href, "_blank", "noopener,noreferrer");
-                                        }
-                                    }}
-                                >
+                                <a href={item.href} target="_blank" rel="noopener noreferrer">
                                     {item.icon && <Icon iconNode={item.icon} className="h-5 w-5" />}
                                     <span>{item.title}</span>
                                 </a>
-ssssssssss
-
                             </SidebarMenuButton>
                         </SidebarMenuItem>
                     ))}
