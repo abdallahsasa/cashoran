@@ -42,7 +42,7 @@ const Index = () => {
                                  <Link href={socialItem.url} target="_blank" rel="noopener noreferrer">
                                     <DynamicIcon name={socialItem.icon} className="h-5 w-5" />
                                     <span className="sr-only">{socialItem.title}</span>
-                                 </Link>sss
+                                 </Link>
                               </Button>
                            ))}
                      </div>
