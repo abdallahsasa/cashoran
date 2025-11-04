@@ -27,10 +27,24 @@ export function NavFooter({ className, ...props }: ComponentPropsWithoutRef<type
                                 asChild
                                 className="text-neutral-600 hover:text-neutral-800 dark:text-neutral-300 dark:hover:text-neutral-100"
                             >
-                                <a href={item.href} target="_blank" rel="noopener noreferrer">
+                                <a
+                                    href={item.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClickCapture={(e) => {
+                                        // Let the browser do a normal navigation; just block parent hijackers
+                                        e.stopPropagation();
+                                    }}
+                                    data-turbo="false"        // Turbo / TurboLinks
+                                    data-no-instant           // InstantClick
+                                    data-ajax="false"         // generic flags some libs look for
+                                    data-no-router            // if you have any custom router sniffers
+                                    aria-label={item.title}
+                                >
                                     {item.icon && <Icon iconNode={item.icon} className="h-5 w-5" />}
                                     <span>{item.title}</span>
                                 </a>
+
                             </SidebarMenuButton>
                         </SidebarMenuItem>
                     ))}
