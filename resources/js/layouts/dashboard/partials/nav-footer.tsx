@@ -41,7 +41,7 @@ export function NavFooter({ className, ...props }: ComponentPropsWithoutRef<type
                                     {item.icon && <Icon iconNode={item.icon} className="h-5 w-5" />}
                                     <span>{item.title}</span>
                                 </a>
-
+ssssssssss
 
                             </SidebarMenuButton>
                         </SidebarMenuItem>
