@@ -11,7 +11,9 @@
       name="csrf-token"
       content="{{ csrf_token() }}"
    >
-
+    <meta property="og:title" content="CashoraN – Build Real Digital Income">
+    <meta property="og:description" content="Courses + ready-to-sell assets to start earning from day one.">
+    <meta property="og:url" content="https://cashoran.com/">
    {{-- Inline style to set the HTML background color based on our theme in app.css --}}
    <style>
       html {
