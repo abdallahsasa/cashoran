@@ -31,19 +31,17 @@ export function NavFooter({ className, ...props }: ComponentPropsWithoutRef<type
                                     href={item.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    onClickCapture={(e) => {
-                                        // Let the browser do a normal navigation; just block parent hijackers
-                                        e.stopPropagation();
+                                    onClick={(e) => {
+                                        // If anyone called preventDefault upstream, just open it manually.
+                                        if (e.isDefaultPrevented && e.isDefaultPrevented()) {
+                                            window.open(item.href, "_blank", "noopener,noreferrer");
+                                        }
                                     }}
-                                    data-turbo="false"        // Turbo / TurboLinks
-                                    data-no-instant           // InstantClick
-                                    data-ajax="false"         // generic flags some libs look for
-                                    data-no-router            // if you have any custom router sniffers
-                                    aria-label={item.title}
                                 >
                                     {item.icon && <Icon iconNode={item.icon} className="h-5 w-5" />}
                                     <span>{item.title}</span>
                                 </a>
+
 
                             </SidebarMenuButton>
                         </SidebarMenuItem>
