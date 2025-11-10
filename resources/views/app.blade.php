@@ -270,6 +270,18 @@
        })();
    </script>
 
+   <script src="https://cdn.brevo.com/js/sdk-loader.js" async></script>
+   <script>
+       // Version: 2.0
+       window.Brevo = window.Brevo || [];
+       Brevo.push([
+           "init",
+           {
+               client_key: "dmd71b2fd25brjv24fsdknz8"
+           }
+       ]);
+   </script>
+
 </body>
 
 </html>
