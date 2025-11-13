@@ -39,7 +39,7 @@ class StoreLessonRequest extends FormRequest
             'description' => 'nullable|string',
             'thumbnail' => 'nullable|string',
             'summary' => 'nullable|string',
-            'attachment' => 'nullable|file|max:60480', // Max 20MB
+            'attachment' => 'nullable|file|max:80480', // Max 20MB
             'embed_source' => [
                 'nullable',
                 'string',
